@@ -1,0 +1,31 @@
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Environment Variables (CRITICAL)
+.env
+.env.local
+
+# Google OAuth Credentials (CRITICAL - DO NOT UPLOAD)
+credentials.json
+token.json
+client_secret_*.json
+
+# VS Code / Editor settings
+.vscode/
+.idea/
+*.swp
+
+# Mac OS specific
+.DS_Store
+
+# Logs
+*.log
