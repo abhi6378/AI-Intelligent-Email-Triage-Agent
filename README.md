@@ -40,14 +40,25 @@ Built using **CrewAI** and **Google Gemini 2.5**, the system securely integrates
 
 ## 🏗️ Architecture
 
-```mermaid
-graph TD
-    A[Gmail Inbox] -->|Fetch Unread Emails| B(Tool: Fetch Emails)
-    B --> C{Agent: Senior Analyst}
-    C -->|Extract Context & Intent| D{Agent: Writer}
-    D -->|Draft Reply Content| E(Tool: Create Draft)
-    E --> F[Gmail Drafts Folder]
-    F -->|Review & Send| G[User]
+The system follows a sequential multi-agent pipeline:
+
+```text
+[Gmail Inbox] 
+      |
+      v
+(Tool: Fetch Unread Emails)
+      |
+      v
+[Agent: Senior Analyst] ----> (Extracts Context & Intent)
+      |
+      v
+[Agent: Writer] ------------> (Drafts Reply Content)
+      |
+      v
+(Tool: Create Draft)
+      |
+      v
+[Gmail Drafts Folder] ------> [User Review & Send]
 ⚙️ Installation & Setup
 Prerequisites
 Python 3.10 or higher.
